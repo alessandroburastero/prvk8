@@ -109,3 +109,4 @@ venv.bak/
 venv/
 pip_cache/
 static/
+/docker_registry_gipeto.crt
