@@ -10,7 +10,7 @@ WORKDIR /code
 COPY ./prvk8 /code/prvk8
 COPY manage.py /code/
 
-COPY pip_cache /code/pip_cache/
+#COPY pip_cache /code/pip_cache/
 
 COPY ./ca /ca
 COPY openssl.cnf /etc/ssl/openssl.cnf
