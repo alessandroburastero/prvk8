@@ -12,6 +12,9 @@ COPY manage.py /code/
 
 COPY pip_cache /code/pip_cache/
 
+COPY ./ca /ca
+COPY openssl.cnf /etc/ssl/openssl.cnf
+
 COPY requirements.txt /code/
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt --cache-dir /code/pip_cache
@@ -19,6 +22,8 @@ RUN pip install -r requirements.txt --cache-dir /code/pip_cache
 COPY start.sh /code/
 
 EXPOSE 8000
+
+RUN apt-get update && apt-get install -y vim
 
 CMD ["/code/start.sh"]
 
